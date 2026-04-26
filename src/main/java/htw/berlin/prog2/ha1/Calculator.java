@@ -75,7 +75,14 @@ public class Calculator {
         latestValue = Double.parseDouble(screen);
         latestOperation = operation;
         var result = switch(operation) {
-            case "√" -> Math.sqrt(Double.parseDouble(screen));
+            case "√" -> {
+                 double value = Double.parseDouble(screen);
+            if (value < 0) {
+                 screen = "Error";
+           yield Double.NaN;
+    }
+           yield Math.sqrt(value);
+}
             case "%" -> Double.parseDouble(screen) / 100;
             case "1/x" -> 1 / Double.parseDouble(screen);
             default -> throw new IllegalArgumentException();
@@ -122,7 +129,14 @@ public class Calculator {
             case "+" -> latestValue + Double.parseDouble(screen);
             case "-" -> latestValue - Double.parseDouble(screen);
             case "x" -> latestValue * Double.parseDouble(screen);
-            case "/" -> latestValue / Double.parseDouble(screen);
+            case "/" -> {
+                        double current = Double.parseDouble(screen);
+            if (current == 0) {
+                 screen = "Error";
+             yield 0;
+    }
+            yield latestValue / current;
+}
             default -> throw new IllegalArgumentException();
         };
         screen = Double.toString(result);
