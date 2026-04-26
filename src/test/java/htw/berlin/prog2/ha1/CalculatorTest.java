@@ -90,6 +90,7 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    
     @Test
     @DisplayName("should display result after subtract two positive multi-digit numbers")
     void testPositiveSubtraction() {
@@ -107,7 +108,8 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
-     //@testDivideByZero Screen soll Error anzeigen wenn eine Positive zahl durch null dividiert wird
+
+    //@testDivideByZero Screen soll Error anzeigen wenn eine Positive zahl durch null dividiert wird
     @Test
     @DisplayName("should display result after divide positive number by zero")
     void testDivideByZero() {
@@ -123,7 +125,7 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
-     //@testDivideByBigNumbers Screen soll Error anzeigen wenn eine kleinere Positive Zahl durch eine viel größere Zahl dividiert wird und das Ergebnis somit ein Dezimalzahl ist.
+    //@testDivideByBigNumbers Screen soll Error anzeigen wenn eine kleinere Positive Zahl durch eine viel größere Zahl dividiert wird und das Ergebnis somit ein Dezimalzahl ist.
     @Test
     @DisplayName("should display result after divide positive number by Multi-digit number result is a decimal number")
     void testDivideByBigNumbers() {
@@ -141,7 +143,6 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-    
     }
 }
 
